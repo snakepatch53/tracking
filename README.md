@@ -3,10 +3,10 @@
 ## 📋 DATOS GENERALES
 
 <ul>
-    <li><b>Cliente:</b> ✅ Constructora Erazo Brother's</li>
+    <li><b>Cliente:</b> ✅ Voy-Llevando</li>
     <li><b>Estado:</b> 🚧 En desarrollo</li>
     <li><b>Version:</b> 🚀 1.0.0</li>
-    <li><b>Nombre:</b> 😎 Constructora Erazo Brother's</li>
+    <li><b>Nombre:</b> 😎 Voy-Llevando</li>
 </ul>
 
 ## 📋 DESCRIPCION

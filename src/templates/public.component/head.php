@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.general/config.css">
 <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.public/header.css">
 <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.public/footer.css">
-<link rel="icon" href="<?= $DATA['http_domain'] ?>public/img/logo.png" />
+<link rel="icon" href="<?= $DATA['http_domain'] ?>public/img/icon.png" />
 <!-- <meta property="og:image" content="<?= $DATA['info']['info_logo_url2'] ?>"> -->
 <!-- <link rel="image_src" href="<?= $DATA['info']['info_logo_url2'] ?>" /> -->
 <title><?= $DATA['title'] ?></title>

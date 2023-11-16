@@ -1,19 +1,19 @@
 @font-face {
-/*    src: url('./../font.general/Roboto-Regular.ttf');*/
+    /*    src: url('./../font.general/Roboto-Regular.ttf');*/
     src: local("roboto");
     font-weight: bold;
     font-family: logo;
 }
 
 @font-face {
-/*    src: url('./../font.general/Pompiere-Regular.ttf');*/
-    src: local("roboto");
-    font-family: contenido;
+    src: url('./../font.general/MYRIADPRO-REGULAR.ttf');
+    font-family: titulo;
 }
 
 @font-face {
-    src: url('./../font.general/Raleway-VariableFont_wght.ttf');
-    font-family: titulo;
+    /*    src: url('./../font.general/Pompiere-Regular.ttf');*/
+    src: local("roboto");
+    font-family: contenido;
 }
 
 :root {
@@ -27,7 +27,7 @@
     margin: 0px;
     padding: 0px;
     font-family: contenido, sans-serif;
-/*    user-select: none;*/
+    /*    user-select: none;*/
     outline: none;
     border-style: none;
 }

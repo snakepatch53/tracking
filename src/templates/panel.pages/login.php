@@ -10,59 +10,45 @@
     <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.general/config.css">
     <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.general/theme1.css">
     <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.panel/login.css">
-    <link rel="shortcut icon" href="<?= $DATA['http_domain'] ?>public/img/icon.svg" type="image/x-icon">
-    <title><?= $DATA['info']['info_name'] ?> ⚙️ Login</title>
+    <link rel="icon" href="<?= $DATA['http_domain'] ?>public/img/icon.png">
+    <title><?= $DATA['title'] ?> ⚙️ Login</title>
     <script>
         const http_domain = '<?= $DATA['http_domain'] ?>';
     </script>
 </head>
 
 <body class="loading">
-    <div class="load">
-        <i class="fas fa-spinner fa-spin"></i>
-    </div>
-    <img src="<?= $DATA['http_domain'] ?>public/img/login-background.jpg" alt="Image of background" class="bg" id="imgrain">
-    <main class='container-fluid'>
-        <div class="modal">
-            <div class="container">
-                <form id="element-loginform" onsubmit="return false">
-                    <a href="<?= $DATA['http_domain'] ?>" class="logo">
-                        <?= getLogo($DATA['info']['info_logo_url'], "alt='Logo " . $DATA['info']['info_name'] . "'") ?>
-                        <h1><?= $DATA['info']['info_name'] ?></h1>
-                    </a>
-                    <div class="input">
-                        <label for="validationCustom01">Username</label>
-                        <div class="row">
-                            <div class="icon"><i class="fa fa-user"></i></div>
-                            <input class="form-control" id="validationCustom01" name="user_user" placeholder="Insert your user" type="text">
-                        </div>
-                    </div>
-                    <div class="input">
-                        <label for="validationCustom02">Password</label>
-                        <div class="row">
-                            <div class="icon"><i class="fa fa-lock"></i></div>
-                            <input class="form-control" id="validationCustom02" name="user_pass" placeholder="Insert your pass" type="password">
-                            <div class="icon right" id="togglePassword">
-                                <i class="show fa fa-eye"></i>
-                                <i class='hide fa fa-eye-slash'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input message" id="element-msg-login"></div>
-                    <div class="input">
-                        <button type="submit">
-                            <span class="me-1">Log In</span>
-                            <i class="fas fa-sign-in-alt"></i>
-                        </button>
-                    </div>
-                </form>
+    <main>
+        <form id="element-loginform">
+            <h1>Bienvenido a</h1>
+            <div class="logo">
+                <img src="<?= $DATA['http_domain'] ?>public/img/logo.png" alt="Logo de VoyLlevando">
             </div>
-        </div>
+            <div class="input">
+                <label for="user">DNI / Email</label>
+                <input type="text" name="user_user" id="user" placeholder="Ingrese su Usuario">
+            </div>
+            <div class="input">
+                <label for="password">Contraseña</label>
+                <input type="password" name="user_pass" id="password" placeholder="Ingrese su Contraseña">
+            </div>
+            <div class="input input-btn">
+                <button type="submit">INICIAR SESION</button>
+            </div>
+            <div class="input input-line">
+                <div class="line"></div>
+                <span>O</span>
+                <div class="line"></div>
+            </div>
+            <div class="input input-or">
+                <span>¿Eres Nuevo?</span>
+                <a href="<?= $DATA['http_domain'] ?>panel/register">REGISTRATE GRATIS</a>
+            </div>
+        </form>
     </main>
 </body>
 <foot>
     <script src="<?= $DATA['http_domain'] ?>public/js.general/fetch.js"></script>
-    <script src="<?= $DATA['http_domain'] ?>public/library.general/rainyday.min.js"></script>
     <script src="<?= $DATA['http_domain'] ?>public/js.panel/login.js"></script>
 </foot>
 

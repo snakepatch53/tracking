@@ -6,6 +6,7 @@ main {
     height: 100vh;
     padding: 20px;
     background-image: url(../img/background1.png);
+    background-position: center;
 }
 
 main form {
@@ -43,6 +44,12 @@ main form .input {
     flex-direction: column;
     width: 100%;
     margin: 10px 0;
+}
+
+main form .input.input-msg {
+    margin: 0;
+    text-align: center;
+    color: var(--danger);
 }
 
 main form .input label {

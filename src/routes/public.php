@@ -7,11 +7,11 @@ $radapter->getHTML('/test', 'test');
 
 // HOME
 $radapter->getHTML('/', 'home', function ($DATA) {
-    header('Location: ./panel');
+    header('Location: ./panel/login');
 });
 
 $radapter->getHTML('/index.php', 'home', function ($DATA) {
-    header('Location: ./panel');
+    header('Location: ./panel/login');
 });
 
 // $radapter->getHTML('/', 'home', function ($DATA) {

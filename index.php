@@ -20,6 +20,7 @@ require_once(__DIR__ . '/src/functions/middlewares.php');
 // cargamos los objetos de acceso a datos
 // require_once('./src/dao/InfoDao.php');
 require_once('./src/dao/UserDao.php');
+require_once('./src/dao/LockerDao.php');
 
 
 // cargamos los servicios para el web service (WEB SERVICE)

@@ -32,6 +32,9 @@
                 <label for="password">Contraseña</label>
                 <input type="password" name="user_pass" id="password" placeholder="Ingrese su Contraseña">
             </div>
+            <div class="input input-msg">
+                <p id="element-msg-login"></p>
+            </div>
             <div class="input input-btn">
                 <button type="submit">INICIAR SESION</button>
             </div>

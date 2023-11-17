@@ -34,11 +34,13 @@ class UserDao
     {
         $resultset = $this->mysqlAdapter->query("
             SELECT * FROM user 
-            WHERE user_user = '$user_user' AND user_pass = '$user_pass'
+            WHERE (user_dni = '$user_user' OR user_email = '$user_user') AND user_pass = '$user_pass'
         ");
         if (mysqli_num_rows($resultset) == 0) return [];
         $row = mysqli_fetch_assoc($resultset);
-        return $this->schematize($row);
+        $res = $this->schematize($row);
+        $res['user_pass'] = $row['user_pass'];
+        return $res;
     }
 
     // public function insert(
@@ -88,6 +90,7 @@ class UserDao
 
     private function schematize($row)
     {
+        $row['user_pass'] = "**********";
         $row['user_photo_url'] = $_ENV['HTTP_DOMAIN'] . "public/img.users/" . ($row['user_photo'] ? $row['user_photo'] : 'default.png') . "?date=" . $row['user_last'];
         return $row;
     }

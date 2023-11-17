@@ -16,32 +16,45 @@ class UserService
             $_POST['user_user'],
             $_POST['user_pass']
         )) {
-            $result['message'] = 'User or password incorrect';
+            $result['message'] = 'Usuario o Clave incorrectos';
             $userDao = new UserDao($adapter);
             $user_user = $_POST['user_user'];
             $user_pass = $_POST['user_pass'];
             $user_r = $userDao->login($user_user, addslashes($user_pass));
-            if (count($user_r) > 0) {
-                if (
-                    $user_r['user_user'] == $user_user and
-                    $user_r['user_pass'] == $user_pass
-                ) {
-                    $_SESSION['user_id'] = $user_r['user_id'];
-                    $_SESSION['user_name'] = $user_r['user_name'];
-                    $_SESSION['user_user'] = $user_r['user_user'];
-                    $_SESSION['user_pass'] = $user_r['user_pass'];
-                    $_SESSION['user_photo'] = $user_r['user_photo'];
-                    $_SESSION['user_photo_url'] = $user_r['user_photo_url'];
-                    $_SESSION['user_last'] = $user_r['user_last'];
-                    $_SESSION['user_created'] = $user_r['user_created'];
-                    $user_r['user_pass'] = null;
-                    $result = [
-                        'status' => 'success',
-                        'message' => 'Welcom to system ' . $user_r['user_name'],
-                        'response' => true,
-                        'data' => $user_r
-                    ];
-                }
+            if (!$user_r) {
+                echo json_encode($result);
+                exit();
+            }
+            if (
+                (
+                    $user_r['user_dni'] == $user_user or
+                    $user_r['user_email'] == $user_user
+                ) and
+                $user_r['user_pass'] == $user_pass
+            ) {
+                $_SESSION['user_id'] = $user_r['user_id'];
+                $_SESSION['user_name'] = $user_r['user_name'];
+                $_SESSION['user_lastname'] = $user_r['user_lastname'];
+                $_SESSION['user_dni'] = $user_r['user_dni'];
+                $_SESSION['user_email'] = $user_r['user_email'];
+                $_SESSION['user_phone'] = $user_r['user_phone'];
+                $_SESSION['user_address'] = $user_r['user_address'];
+                $_SESSION['user_location'] = $user_r['user_location'];
+                $_SESSION['user_city'] = $user_r['user_city'];
+                $_SESSION['user_pass'] = "**********";
+                $_SESSION['user_photo'] = $user_r['user_photo'];
+                $_SESSION['user_type'] = $user_r['user_type'];
+                $_SESSION['user_last'] = $user_r['user_last'];
+                $_SESSION['user_created'] = $user_r['user_created'];
+
+
+                $user_r['user_pass'] = null;
+                $result = [
+                    'status' => 'success',
+                    'message' => 'Welcom to system ' . $user_r['user_name'],
+                    'response' => true,
+                    'data' => $user_r
+                ];
             }
         }
         echo json_encode($result);
@@ -74,6 +87,7 @@ class UserService
             'data' => $users
         ]);
     }
+
     // public static function insert($DATA)
     // {
     //     header('Content-Type: application/json');

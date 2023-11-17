@@ -11,6 +11,22 @@ INSERT INTO
 VALUES
     (1, 'Voy Llevando', '2023-01-01 00:00:00');
 
+-- locker -> hace referencia a las casas donde pueden enviar sus paquetes
+CREATE TABLE locker (
+    locker_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    locker_name VARCHAR(50),
+    locker_popup BOOLEAN DEFAULT FALSE,
+    locker_img VARCHAR(50),
+    locker_last VARCHAR(50)
+) ENGINE INNODB;
+
+INSERT INTO
+    locker (locker_name, locker_popup)
+VALUES
+    ('Danbury, CT- USA', 1),
+    ('Mastic Beach, NY - USA', 1),
+    ('Gualaceo, Azuay - ECU', 0);
+
 DROP TABLE IF EXISTS user;
 
 CREATE TABLE user (
@@ -51,12 +67,24 @@ VALUES
         '2023-01-01 00:00:00'
     );
 
+CREATE TABLE shipment (
+    shipment_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    shipment_date VARCHAR(50),
+    shipment_weight DOUBLE,
+    shipment_last VARCHAR(50),
+    shipment_created VARCHAR(50),
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES user(user_id)
+) ENGINE INNODB;
+
 CREATE TABLE alert (
     alert_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     alert_last VARCHAR(50),
     alert_created VARCHAR(50),
     user_id INT,
-    FOREIGN KEY (user_id) REFERENCES user(user_id)
+    shipment_id INT,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (shipment_id) REFERENCES shipment(shipment_id)
 ) ENGINE INNODB;
 
 CREATE TABLE tracking (

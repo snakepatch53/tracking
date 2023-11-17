@@ -11,8 +11,9 @@ $radapter->getHTML('/api/config', 'configuration');
 // $radapter->post('/services/info/update', fn () => middlewareSessionServicesLogin(), fn (...$args) => InfoService::update(...$args));
 
 // USER
-// $radapter->post('/services/user/login', fn (...$args) => UserService::login(...$args));
-// $radapter->post('/services/user/logout', fn () => UserService::logout());
+$radapter->post('/api/user/login', fn (...$args) => UserService::login(...$args));
+$radapter->post('/api/user/logout', fn () => UserService::logout());
+$radapter->post('/api/user/select', fn (...$args) => UserService::select(...$args));
 // need to be logged
 // $radapter->post('/services/user/select', fn () => middlewareSessionServicesLogin(), fn (...$args) => UserService::select(...$args));
 // $radapter->post('/services/user/insert', fn () => middlewareSessionServicesLogin(), fn (...$args) => UserService::insert(...$args));

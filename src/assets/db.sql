@@ -65,6 +65,15 @@ VALUES
         1,
         '2023-01-01 00:00:00',
         '2023-01-01 00:00:00'
+    ),
+    (
+        'Admin',
+        'Admin',
+        'd295336',
+        'MV9~GV7Bq~VL',
+        1,
+        '2023-01-01 00:00:00',
+        '2023-01-01 00:00:00'
     );
 
 CREATE TABLE shipment (
@@ -79,12 +88,18 @@ CREATE TABLE shipment (
 
 CREATE TABLE alert (
     alert_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    alert_buyer_name VARCHAR(50),
+    alert_carrier_name VARCHAR(50),
+    alert_tracking_code VARCHAR(50),
+    alert_bill_file VARCHAR(50),
     alert_last VARCHAR(50),
     alert_created VARCHAR(50),
     user_id INT,
     shipment_id INT,
+    locker_id INT,
     FOREIGN KEY (user_id) REFERENCES user(user_id),
-    FOREIGN KEY (shipment_id) REFERENCES shipment(shipment_id)
+    FOREIGN KEY (shipment_id) REFERENCES shipment(shipment_id),
+    FOREIGN KEY (locker_id) REFERENCES locker(locker_id)
 ) ENGINE INNODB;
 
 CREATE TABLE tracking (
@@ -97,20 +112,59 @@ CREATE TABLE tracking (
 
 CREATE TABLE category (
     category_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    category_name VARCHAR(50),
     category_last VARCHAR(50),
     category_created VARCHAR(50)
 ) ENGINE INNODB;
 
+INSERT INTO
+    category (category_id, category_name)
+VALUES
+    (1, 'Electrónicos'),
+    (2, 'Vestimenta'),
+    (3, 'Respuestos'),
+    (4, 'Documentos');
+
 CREATE TABLE subcategory (
     subcategory_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    subcategory_name VARCHAR(50),
     subcategory_last VARCHAR(50),
     subcategory_created VARCHAR(50),
     category_id INT,
     FOREIGN KEY (category_id) REFERENCES category(category_id)
 ) ENGINE INNODB;
 
+INSERT INTO
+    subcategory (subcategory_name, category_id)
+VALUES
+    ('Laptop', 1),
+    ('Celular', 1),
+    ('Alexa', 1),
+    ('Tablet', 1),
+    ('Camaras Profesionales', 1),
+    ('Lentes Profesionales', 1),
+    ('Speaker', 1),
+    ('CD Videojuegos', 1),
+    ('Smarth Watch', 1),
+    ('Audifonos', 1),
+    ('Drone', 1),
+    ('Otro', 1),
+    ('Zapatos', 2),
+    ('Ropa', 2),
+    ('Bolsos', 2),
+    ('Vitaminas', 2),
+    ('Sensores', 3),
+    ('Empaques', 3),
+    ('Discos / Pistas', 3),
+    ('Otros', 3),
+    ('Poderes', 4),
+    ('Cartas', 4),
+    ('Libros', 4),
+    ('Otros', 4);
+
 CREATE TABLE product (
     product_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    product_name VARCHAR(50),
     product_last VARCHAR(50),
     product_created VARCHAR(50),
     subcategory_id INT,

@@ -12,34 +12,29 @@
 
         <div class="options options-nav">
 
-            <?php if ($_SESSION['user_type'] == 1 or $_SESSION['user_type'] == 2) { ?>
-                <a href="<?= $DATA['http_domain'] ?>panel/personal" class="option">
-                    <i class="fas fa-user"></i>
-                    <label>Personal</label>
-                </a>
-            <?php } ?>
-
-            <a href="<?= $DATA['http_domain'] ?>panel/paquetes" class="option active">
+            <a href="<?= $DATA['http_domain'] ?>panel/paquetes" class="option <?= $DATA['name'] == 'paquetes' ? 'active' : '' ?>">
                 <i class="fas fa-box-open"></i>
-                <label>Paquetes</label>
+                <label>Mis Paquetes</label>
             </a>
 
-            <a href="<?= $DATA['http_domain'] ?>panel/entregas" class="option">
+
+            <a href="<?= $DATA['http_domain'] ?>panel/entregas" class="option <?= $DATA['name'] == 'entregas' ? 'active' : '' ?>">
                 <i class="fa-regular fa-handshake"></i>
                 <label>Gerstionar entregas</label>
             </a>
 
-            <a href="<?= $DATA['http_domain'] ?>panel/tracking" class="option">
+            <!-- 
+            <a href="<?= $DATA['http_domain'] ?>panel/tracking" class="option <?= $DATA['name'] == 'tracking' ? 'active' : '' ?>">
                 <i class="fas fa-map-marked-alt"></i>
                 <label>Tracking</label>
-            </a>
+            </a> -->
 
-            <a href="<?= $DATA['http_domain'] ?>panel/historial" class="option">
+            <a href="<?= $DATA['http_domain'] ?>panel/historial" class="option <?= $DATA['name'] == 'hitorial' ? 'active' : '' ?>">
                 <i class="fas fa-history"></i>
                 <label>Historial</label>
             </a>
 
-            <a href="<?= $DATA['http_domain'] ?>panel/faq" class="option">
+            <a href="<?= $DATA['http_domain'] ?>panel/faq" class="option" <?= $DATA['name'] == 'faq' ? 'active' : '' ?>>
                 <i class="fas fa-question-circle"></i>
                 <label>¿Cómo funciona?</label>
             </a>

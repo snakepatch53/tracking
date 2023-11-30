@@ -1,0 +1,110 @@
+.group-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.group-title h3 {
+    font-family: titulo;
+    font-size: 2rem;
+}
+
+.group-title button {
+    background: var(--color2-bg);
+    color: var(--color2-txt);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: contenido;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.group-title button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.group-title button span {}
+
+.group-title button i {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*end*/

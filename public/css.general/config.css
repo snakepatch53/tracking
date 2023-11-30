@@ -20,6 +20,7 @@
     --max-width: 1200px;
     --padding: 50px;
     --header-height: 90px;
+    --box-shadow: 0 2.5px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -65,17 +66,17 @@ img {
 
 /* _____________ SCROLL _ STYLES ________________ */
 .scroll-style::-webkit-scrollbar {
-    width: 3px;
+    width: 7px;
     height: 5px;
 }
 
 .scroll-style::-webkit-scrollbar-thumb {
-    background: var(--primary_background);
-    border-radius: 7px;
+    background: var(--color1-bg);
+    border-radius: 4px;
 }
 
 .scroll-style::-webkit-scrollbar-thumb:hover {
-    background: var(--primary_background_hover);
+    background: var(--color1-bg);
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 

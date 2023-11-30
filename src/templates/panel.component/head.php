@@ -6,8 +6,9 @@
 <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.general/theme1.css">
 <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.panel/general.css">
 <link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.panel/sidebar.css">
+<link rel="stylesheet" href="<?= $DATA['http_domain'] ?>public/css.panel/header.css">
 <link rel="shortcut icon" href="<?= $DATA['http_domain'] ?>public/img/icon.png" type="image/x-icon">
-<title>Panel <?= $DATA['title'] ?></title>
+<title>Panel - <?= $DATA['title'] ?></title>
 <script>
     const http_domain = '<?= $DATA['http_domain'] ?>';
     const SESSION = JSON.parse('<?= json_encode($_SESSION) ?>');

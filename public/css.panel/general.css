@@ -77,8 +77,6 @@ main .container {
     text-align: center;
 }
 
-.table-layout tbody {}
-
 .table-layout tbody,
 .table-layout thead {
     position: relative;
@@ -117,18 +115,14 @@ main .container {
     transition: all 0.1s ease;
 }
 
-.table-layout tr th:nth-child(1),
-.table-layout tr td:nth-child(1) {
-    display: none;
-}
-
 .table-layout tbody tr td {
     padding: 10px 0;
     transition: background 0.1s ease;
 }
+
 .table-layout tbody tr td:first-child {
     border-radius: var(--radius) 0 0 var(--radius);
-    
+
 }
 
 .table-layout tbody tr td:last-child {
@@ -144,14 +138,14 @@ main .container {
 .table-layout tbody tr td .btn-group button {
     position: relative;
     background: transparent;
-    padding: 5px;  
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 
 .table-layout tbody tr td .btn-group button:hover {
-/*    transform: scale(1.3);*/
+    /*    transform: scale(1.3);*/
     transition: transform 0.2s ease;
 }
 
@@ -177,31 +171,19 @@ main .container {
     max-height: 40px;
     padding: 10px;
     transition: all 0.2s ease;
-    
+
 }
 
 
 @media(max-width: 1000px) {
+
     .table-layout tr th,
     .table-layout tr td {
         display: none;
     }
-    
+
     .table-layout tr th.size-show-1,
     .table-layout tr td.size-show-1 {
         display: table-cell;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

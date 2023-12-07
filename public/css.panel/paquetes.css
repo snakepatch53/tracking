@@ -16,6 +16,7 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
+    cursor: pointer;
 }
 
 .section-state .item.active {
